@@ -11,6 +11,6 @@
 
 ## Avaliable Status
 
-# available
-# transferred
-# waiting_funds
+- available
+- transferred
+- waiting_funds
