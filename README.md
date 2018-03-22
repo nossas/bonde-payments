@@ -1,5 +1,7 @@
 # bonde-payments
 
+## Pendings
+
 - [ ] Create Dockerfile
 - [ ] Create .drone.yml
 - [ ] Create Rake Tasks
