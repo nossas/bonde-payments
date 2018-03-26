@@ -1,4 +1,5 @@
 require 'active_record'
+require 'erb'
 require_relative './models/recipient'
 require_relative '../config/pagarme'
 require_relative '../lib/balance_sync'
@@ -18,13 +19,13 @@ class Main
   end
 
   def connect
-    ActiveRecord::Base.establish_connection(db_config["development"])
-    puts "Connect Database"
+    ActiveRecord::Base.establish_connection(db_config[ENV['RUBY_ENV']])
+    puts "Connect Database on #{ENV['RUBY_ENV']}"
   end
 
   private
     def db_config
       db_file = File.join(File.expand_path('..',__FILE__), '..', 'config', 'config.yml')
-      YAML.load(File.read(db_file))
+      YAML.load(ERB.new(File.read(db_file)).result)
     end
 end
