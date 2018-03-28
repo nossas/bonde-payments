@@ -6,6 +6,9 @@ require_relative '../lib/balance_sync'
 
 class Main
   def sync_recipients(status)
+    if ENV['PAGARME_API_KEY'].nil?
+      abort("Configure ENV['PAGARME_API_KEY'] to execute command")
+    end
     connect
 
     Recipient.find_each do |recipient|
