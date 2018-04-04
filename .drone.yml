@@ -13,7 +13,7 @@ pipeline:
     image: peloton/drone-rancher
     url: http://cluster.bonde.org
     service: staging/payments
-    docker_image: nossas/bonde-payments${DRONE_BRANCH}
+    docker_image: "nossas/bonde-payments:${DRONE_BRANCH}"
     timeout: 360
     confirm: true
     secrets: [ rancher_access_key, rancher_secret_key ]
