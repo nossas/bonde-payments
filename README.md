@@ -15,6 +15,12 @@
 
 ## Running tasks with Ruby
 TRUBY_ENV=ENVIRONMENT AMOUNT=100 DATABASE_URL='postgres://postgres@localhost/postgres' ruby -I . -r "app/main" -e "Main.new.sync_recipients 'STATUS'"`
+=======
+- [ ] Create .drone.yml
+- [ ] Create Rake Tasks
+
+## Running tasks with Ruby
+`RUBY_ENV=ENVIRONMENT DATABASE_URL='postgres://postgres@localhost/postgres' ruby -I . -r "app/main" -e "Main.new.sync_recipients 'STATUS'"`
 
 ## Running tasks on Docker
 ```
