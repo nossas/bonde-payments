@@ -7,7 +7,7 @@ class BalanceSync
 
   def sync_balance_operations page = 1, status
     operations = gateway_recipient.balance_operations(
-      count: ENV['AMOUNT'],
+      count: ENV['AMOUNT'].to_i,
       page: page,
       status: status
     )
